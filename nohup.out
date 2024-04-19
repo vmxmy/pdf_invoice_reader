@@ -1,0 +1,179 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.10.16:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 202-424-104
+10.10.10.1 - - [19/Apr/2024 07:31:54] "GET / HTTP/1.1" 200 -
+10.10.10.1 - - [19/Apr/2024 07:31:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.10.1 - - [19/Apr/2024 07:31:59] "POST /uploader HTTP/1.1" 200 -
+10.10.10.1 - - [19/Apr/2024 09:15:25] "GET / HTTP/1.0" 200 -
+10.10.10.1 - - [19/Apr/2024 14:06:18] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+10.10.10.1 - - [19/Apr/2024 14:06:18] "[31m[1m\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie: mstshash=Administr[0m" 400 -
+10.10.10.1 - - [19/Apr/2024 15:59:55] "[31m[1mGET /uploader HTTP/1.1[0m" 405 -
+10.10.10.1 - - [19/Apr/2024 16:00:00] "GET / HTTP/1.1" 200 -
+10.10.10.1 - - [19/Apr/2024 16:00:08] "POST /uploader HTTP/1.1" 200 -
+10.10.10.153 - - [19/Apr/2024 16:05:48] "GET / HTTP/1.1" 200 -
+10.10.10.153 - - [19/Apr/2024 16:26:28] "GET / HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/app/pdf_invoice_reader/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 202-424-104
+ * Detected change in '/home/ubuntu/app/pdf_invoice_reader/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 202-424-104
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.10.16:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 934-685-882
+10.10.10.1 - - [19/Apr/2024 20:28:19] "GET / HTTP/1.1" 200 -
+10.10.10.1 - - [19/Apr/2024 20:28:20] "[36mGET /uploader?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+10.10.10.1 - - [19/Apr/2024 20:28:20] "[36mGET /uploader?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+10.10.10.1 - - [19/Apr/2024 20:28:20] "[36mGET /uploader?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+10.10.10.1 - - [19/Apr/2024 20:28:30] "POST /uploader HTTP/1.1" 200 -
+10.10.10.1 - - [19/Apr/2024 20:32:51] "GET / HTTP/1.0" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.10.16:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 934-685-882
+10.10.10.1 - - [19/Apr/2024 20:52:54] "POST /uploader HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/app/pdf_invoice_reader/app.py', reloading
+<FileStorage: '2024031891440104MA59DH4Y5U20-20113316037985-01956673---809.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240417-24442000000154529025---867.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-03514793---450.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-03400916---1120.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-03334454---505.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01308593---440.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01146614---390.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01082945---631.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01082944---180.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01082943---1250.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240329-24952000000039904554---2513.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240328-24952000000039492537---2743.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240325-24442000000116575693---235.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240324-24952000000036174688---2679.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240322-24952000000035722781---2932.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240315-24952000000031722382---1800.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240307-69914329---369.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240129-24942000000003727672---684.40.pdf' ('application/pdf')>  saved
+0 x: uploads/2024年03月18日餐饮服务80900广州市越秀区太匠餐厅01956673.pdf 已存在
+
+1 x: uploads/2024年04月17日餐饮服务86700广州市越秀区美庐煨汤馆24442000000154529025.pdf 已存在
+
+2 x: uploads/2024年04月05日经纪代理服务45000阿斯兰航空服务03514793.pdf 已存在
+
+3 x: uploads/2024年04月05日经纪代理服务112000阿斯兰航空服务03400916.pdf 已存在
+
+4 x: uploads/2024年04月05日经纪代理服务50500阿斯兰航空服务03334454.pdf 已存在
+
+5 x: uploads/2024年04月05日经纪代理服务44000阿斯兰航空服务01308593.pdf 已存在
+
+6 x: uploads/2024年04月05日经纪代理服务39000阿斯兰航空服务01146614.pdf 已存在
+
+7 x: uploads/2024年04月05日经纪代理服务63100阿斯兰航空服务01082945.pdf 已存在
+
+8 x: uploads/2024年04月05日经纪代理服务18000阿斯兰航空服务01082944.pdf 已存在
+
+9 x: uploads/2024年04月05日经纪代理服务125000阿斯兰航空服务01082943.pdf 已存在
+
+10 x: uploads/2024年03月29日餐饮服务251300深圳市南山区宸慧嘉餐饮店24952000000039904554.pdf 已存在
+
+11 x: uploads/2024年03月28日餐饮服务274300深圳市龙华区秦米合餐饮店24952000000039492537.pdf 已存在
+
+12 x: uploads/2024年03月25日餐饮服务23500广州市凯瑞餐饮有限公司24442000000116575693.pdf 已存在
+
+13 x: uploads/2024年03月24日餐饮服务267900深圳市宝安区杨德餐饮店24952000000036174688.pdf 已存在
+
+14 x: uploads/2024年03月22日餐饮服务293200深圳市南山区悠蜜情餐饮店24952000000035722781.pdf 已存在
+
+15 x: uploads/2024年03月15日住宿服务180000深圳市宝安区锦阆扉酒店24952000000031722382.pdf 已存在
+
+16 x: uploads/2024年03月07日餐饮服务36900广州市海珠区乡下边饭店69914329.pdf 已存在
+
+17 x: uploads/2024年01月29日住宿服务68440华贤24942000000003727672.pdf 已存在
+
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 934-685-882
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.10.16:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 934-685-882
+<FileStorage: '2024031891440104MA59DH4Y5U20-20113316037985-01956673---809.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240417-24442000000154529025---867.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-03514793---450.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-03400916---1120.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-03334454---505.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01308593---440.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01146614---390.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01082945---631.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01082944---180.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240405-01082943---1250.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240329-24952000000039904554---2513.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240328-24952000000039492537---2743.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240325-24442000000116575693---235.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240324-24952000000036174688---2679.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240322-24952000000035722781---2932.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240315-24952000000031722382---1800.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240307-69914329---369.00.pdf' ('application/pdf')>  saved
+<FileStorage: '20240129-24942000000003727672---684.40.pdf' ('application/pdf')>  saved
+0 x: uploads/2024年03月18日餐饮服务80900广州市越秀区太匠餐厅01956673.pdf 已存在
+
+1 x: uploads/2024年04月17日餐饮服务86700广州市越秀区美庐煨汤馆24442000000154529025.pdf 已存在
+
+2 x: uploads/2024年04月05日经纪代理服务45000阿斯兰航空服务03514793.pdf 已存在
+
+3 x: uploads/2024年04月05日经纪代理服务112000阿斯兰航空服务03400916.pdf 已存在
+
+4 x: uploads/2024年04月05日经纪代理服务50500阿斯兰航空服务03334454.pdf 已存在
+
+5 x: uploads/2024年04月05日经纪代理服务44000阿斯兰航空服务01308593.pdf 已存在
+
+6 x: uploads/2024年04月05日经纪代理服务39000阿斯兰航空服务01146614.pdf 已存在
+
+7 x: uploads/2024年04月05日经纪代理服务63100阿斯兰航空服务01082945.pdf 已存在
+
+8 x: uploads/2024年04月05日经纪代理服务18000阿斯兰航空服务01082944.pdf 已存在
+
+9 x: uploads/2024年04月05日经纪代理服务125000阿斯兰航空服务01082943.pdf 已存在
+
+10 x: uploads/2024年03月29日餐饮服务251300深圳市南山区宸慧嘉餐饮店24952000000039904554.pdf 已存在
+
+11 x: uploads/2024年03月28日餐饮服务274300深圳市龙华区秦米合餐饮店24952000000039492537.pdf 已存在
+
+12 x: uploads/2024年03月25日餐饮服务23500广州市凯瑞餐饮有限公司24442000000116575693.pdf 已存在
+
+13 x: uploads/2024年03月24日餐饮服务267900深圳市宝安区杨德餐饮店24952000000036174688.pdf 已存在
+
+14 x: uploads/2024年03月22日餐饮服务293200深圳市南山区悠蜜情餐饮店24952000000035722781.pdf 已存在
+
+15 x: uploads/2024年03月15日住宿服务180000深圳市宝安区锦阆扉酒店24952000000031722382.pdf 已存在
+
+16 x: uploads/2024年03月07日餐饮服务36900广州市海珠区乡下边饭店69914329.pdf 已存在
+
+17 x: uploads/2024年01月29日住宿服务68440华贤24942000000003727672.pdf 已存在
+
+10.10.10.1 - - [19/Apr/2024 20:58:19] "POST /uploader HTTP/1.1" 200 -

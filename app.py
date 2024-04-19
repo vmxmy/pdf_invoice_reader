@@ -108,13 +108,14 @@ def upload_file():
         for index, row in df_info.iterrows():
             path = app.config['UPLOAD_FOLDER']
             old_name_path = os.path.join(path, row['filename'])
-            new_name = sanitize_filename(row['invoice_date'] + row['seller'] + row['service_content'] +row['total_amount']) + '.pdf'
+            new_name = sanitize_filename(row['invoice_date'] + row['service_content'] +row['total_amount']+ row['seller'] + row['invoice_number'] ) + '.pdf'
             new_name_path = os.path.join(path, new_name)
             if not os.path.exists(new_name_path):
                 os.rename(old_name_path, new_name_path)
-                print(index,'o:',old_name_path,'===>>>',new_name_path,'\n')
+                print(index,'o:',old_name_path,'===>>>',new_name_path,'\n', flush=True)
             else:
-                print(index,'x:',new_name_path,'已存在\n')
+                os.remove(old_name_path)
+                print(index,'x:',new_name_path,'已存在\n', flush=True)
 
         df_html = df_info.to_html(index=False, classes='table table-striped')
         # 将结果发送到新的模板进行渲染
@@ -122,4 +123,4 @@ def upload_file():
     return "Failed to read PDFs"
 
 if __name__ == '__main__':
-     app.run(host='0.0.0.0', port=5001, debug=True)
+     app.run(host='0.0.0.0', port=5000, debug=True)
