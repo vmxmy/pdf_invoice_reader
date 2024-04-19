@@ -5,17 +5,11 @@ import re
 import pandas as pd
 import os
 
-# 定义正则表达式
-date_regex = r'开票日期：(\d{4}年\d{2}月\d{2}日)'
-total_amount_regex = r'合 计 ¥(\d+\.\d{2})'
-service_content_regex = r'\*(.*?)\*'
-
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 限制文件大小为16MB
 # 确保上传文件夹存在
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-
 
 @app.route('/')
 def upload_form():
