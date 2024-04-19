@@ -3,6 +3,7 @@ import pdfplumber
 from werkzeug.utils import secure_filename
 import re
 import pandas as pd
+import os
 
 # 定义正则表达式
 date_regex = r'开票日期：(\d{4}年\d{2}月\d{2}日)'
@@ -10,6 +11,11 @@ total_amount_regex = r'合 计 ¥(\d+\.\d{2})'
 service_content_regex = r'\*(.*?)\*'
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads/'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 限制文件大小为16MB
+# 确保上传文件夹存在
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
 
 @app.route('/')
 def upload_form():
@@ -26,7 +32,13 @@ def upload_file():
         # 遍历文件，提取文本
         for uploaded_file in uploaded_files:
             if uploaded_file.filename != '':
+                
                 filename = secure_filename(uploaded_file.filename)
+                # 获取文件保存的路径
+                file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                uploaded_file.save(file_path)
+                print(uploaded_file," saved")
+                
                 with pdfplumber.open(uploaded_file) as pdf:
                     text = ''
                     for page in pdf.pages:
@@ -35,7 +47,8 @@ def upload_file():
                             text += page_text + "\n\n"
                 # 将文件名和文本作为元组添加到结果列表中
                 results.append((uploaded_file.filename, text))
-        # 使用concat函数将所有的DataFrame拼接成一个
+             
+        # 将results 转换成DataFrame
         df_results = pd.DataFrame(results, columns=['filename', 'content'])
 
         # 使用replace()函数将所有冒号替换为冒号
@@ -48,7 +61,7 @@ def upload_file():
         df_results['content'] = df_results['content'].str.replace('（', '(')
         df_results['content'] = df_results['content'].str.replace('）', ')')
 
-        # 使用正则表达式提取信息
+        # 使用正则表达式提取信息,并写入dataframe
         for index, raw in df_results.iterrows():
             #提取content列的文本内容
             text = raw['content']
@@ -84,13 +97,29 @@ def upload_file():
             if match:
                 df_results.loc[index, 'invoice_number'] = match.group('number')
 
-        
         # 创建一个DataFrame，包含提取的信息
         df_info = df_results[['filename', 'invoice_date', 'total_amount', 'service_content', 'seller', 'invoice_number']]
+        
+        # 确保文件名中不含不合法字符
+        def sanitize_filename(filename):
+            return "".join([c for c in filename if c.isalpha() or c.isdigit() or c == ' ']).rstrip()
+        # 以 invoice_date+total_amount+service_content+seller重命名文件
+        # 遍历 filename 列的每一行，并将文件重命名为 1+2+3.pdf 的格式
+        for index, row in df_info.iterrows():
+            path = app.config['UPLOAD_FOLDER']
+            old_name_path = os.path.join(path, row['filename'])
+            new_name = sanitize_filename(row['invoice_date'] + row['seller'] + row['service_content'] +row['total_amount']) + '.pdf'
+            new_name_path = os.path.join(path, new_name)
+            if not os.path.exists(new_name_path):
+                os.rename(old_name_path, new_name_path)
+                print(index,'o:',old_name_path,'===>>>',new_name_path,'\n')
+            else:
+                print(index,'x:',new_name_path,'已存在\n')
+
         df_html = df_info.to_html(index=False, classes='table table-striped')
         # 将结果发送到新的模板进行渲染
         return render_template('results.html', tables = df_html)
     return "Failed to read PDFs"
 
 if __name__ == '__main__':
-     app.run(host='0.0.0.0', port=5000, debug=True)
+     app.run(host='0.0.0.0', port=5001, debug=True)
